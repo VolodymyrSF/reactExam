@@ -1,0 +1,10 @@
+
+.movieDiv{
+ display: flex;
+ flex-direction: column;
+ height: 25%;
+ width: 30%;
+}
+.movieDiv img{
+ height: 450px;
+}
