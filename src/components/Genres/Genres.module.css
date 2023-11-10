@@ -1,0 +1,6 @@
+.bigDiv{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    flex-wrap: wrap;
+}

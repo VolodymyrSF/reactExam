@@ -13,10 +13,10 @@ const Movie:FC<IProps> = ({movie}) => {
     const {title,poster_path,id}=movie
     const navigate=useNavigate()
     return (
-        <div>
+        <div className={css.mainDiv}>
             <div className={css.movieDiv} onClick={()=>navigate(`${id}`)}>
                 <img src={imgURL+poster_path} alt={title}/>
-                {title}
+                <div className={css.titleDiv}>{title}</div>
             </div>
         </div>
     );

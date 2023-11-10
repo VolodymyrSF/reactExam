@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {IMovie} from "../interfaces/movieInterface";
 import {genreService} from "../services/genreService";
 import {GenredMovies} from "../components/Movies/GenredMovies";
+import css from "./genredListedPage.module.css"
 
 const GenreListedPage = () => {
     const {id}=useParams()
@@ -14,7 +15,7 @@ const GenreListedPage = () => {
         genreService.getById(+id).then(({data})=>setGenredMovies({page:data.page,results:data.results}))
     },[id])
     return (
-        <div>
+        <div className={css.mainDiv}>
             {genredMovies.results.map(genredMovies=><GenredMovies key={genredMovies.id} genredMovies={genredMovies}/>)}
         </div>
     );

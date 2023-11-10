@@ -6,7 +6,7 @@ import {IRes} from "../types/iResType";
 import {IMovieDetails} from "../interfaces/movieDetailsInterface";
 
 const movieService={
-    getAll:():IRes<IMovies> =>axiosService.get(urls.getMovie.base),
+    getAll:(page:number):IRes<IMovies> =>axiosService.get(urls.getMovie.base,{params:{page}}),
     getById:(id:number):IRes<IMovieDetails>=>axiosService.get(urls.getMovie.getById(id))
 }
 
