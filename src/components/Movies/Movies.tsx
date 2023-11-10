@@ -4,7 +4,6 @@ import {IMovie} from "../../interfaces/movieInterface";
 import {movieService} from "../../services/movieService";
 import {Movie} from "../Movie/Movie";
 import css from "./Movies.module.css"
-import {onHidden} from "web-vitals/dist/modules/lib/onHidden";
 const Movies = () => {
     const [movies,setMovies]=useState<{page: number | null, results: IMovie[]}>({page: null, results: []});
     const [page,setPage]=useState<number>(1);
