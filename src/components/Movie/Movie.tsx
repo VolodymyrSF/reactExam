@@ -10,7 +10,7 @@ interface IProps{
     movie:IMovie
 }
 const Movie:FC<IProps> = ({movie}) => {
-    const {title,poster_path,id}=movie
+    const {title,poster_path,id,vote_average}=movie
     const navigate=useNavigate()
     return (
         <div className={css.mainDiv}>

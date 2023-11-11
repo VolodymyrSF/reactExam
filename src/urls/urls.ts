@@ -17,7 +17,7 @@ const urls={
         getById:(id:number):string =>`${genre}${id}/movies?api_key=${api_key}`
     },
     getSearch:{
-        base:`${search}${movie}`
+        base:`${search}${movie}?api_key=${api_key}`
     }
 }
 
