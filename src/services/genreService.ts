@@ -7,7 +7,7 @@ import {IMovies} from "../interfaces/movieInterface";
 
 const genreService={
     getAll:():IRes<IGenre> =>axiosService.get(urls.getGenre.base),
-    getById:(id:number):IRes<IMovies>=>axiosService.get(urls.getGenre.getById(id))
+    getById:(id:number,page:number):IRes<IMovies>=>axiosService.get(urls.getGenre.getById(id),{params:{page}})
 }
 
 export {genreService}
