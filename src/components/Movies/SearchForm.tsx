@@ -50,7 +50,6 @@ const SearchForm: FC<IProps> = () => {
         reset();
     };
 
-    console.log(searchedMovies);
 
     return (
         <div>
@@ -63,18 +62,18 @@ const SearchForm: FC<IProps> = () => {
             <div className={css.bigDiv}>
             {searchedMovies.results.length > 0 && (
                 <>
+                    <div className={css.buttonDiv}>
+                        <button disabled={page === 1} onClick={getPreviousPage}>
+                            Previous Page
+                        </button>
+                        <div className={css.pageDiv}>Current Page: {page}</div>
+                        <button disabled={page > 500} onClick={getNextPage}>
+                            Next Page
+                        </button>
+                    </div>
                     {searchedMovies.results.map((searchedMovie) => (
                         <SearchedMovies key={searchedMovie.id} searchedMovie={searchedMovie} />
                     ))}
-                    <div className={css.buttonDiv}>
-                    <button disabled={page === 1} onClick={getPreviousPage}>
-                        Previous Page
-                    </button>
-                    <div className={css.pageDiv}>Current Page: {page}</div>
-                    <button disabled={page > 500} onClick={getNextPage}>
-                        Next Page
-                    </button>
-                    </div>
                 </>
 
             )}
