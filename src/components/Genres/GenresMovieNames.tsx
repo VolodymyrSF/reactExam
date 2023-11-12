@@ -6,9 +6,10 @@ interface IProps{
     genreName:Ig
 }
 const GenresMovieNames:FC<IProps> = ({genreName}) => {
+    const {name}=genreName
     return (
         <div>
-            {genreName.name}
+            <div >{name}</div>
         </div>
     );
 };

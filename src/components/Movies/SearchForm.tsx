@@ -54,20 +54,32 @@ const SearchForm: FC<IProps> = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit(search)}>
-                <input type={"text"} placeholder={'Введіть назву фільму'} {...register('title')} />
-                <button>Search</button>
+            <form onSubmit={handleSubmit(search)} className={css.formDiv}>
+                <input type={'text'} placeholder={'Введіть назву фільму'} {...register('title')} />
+                <button type="submit">Search</button>
             </form>
-            {searchedMovies && searchedMovies.results && searchedMovies.results.map((searchedMovie) => (
-                <SearchedMovies key={searchedMovie.id} searchedMovie={searchedMovie} />
-            ))}
-            <button disabled={page === 1} onClick={getPreviousPage}>
-                Previous Page
-            </button>
-            <div className={css.pageDiv}>Current Page: {page}</div>
-            <button disabled={page > 500} onClick={getNextPage}>
-                Next Page
-            </button>
+            <div className={css.mainDiv}>
+                <h1>Searched Movies</h1>
+            <div className={css.bigDiv}>
+            {searchedMovies.results.length > 0 && (
+                <>
+                    {searchedMovies.results.map((searchedMovie) => (
+                        <SearchedMovies key={searchedMovie.id} searchedMovie={searchedMovie} />
+                    ))}
+                    <div className={css.buttonDiv}>
+                    <button disabled={page === 1} onClick={getPreviousPage}>
+                        Previous Page
+                    </button>
+                    <div className={css.pageDiv}>Current Page: {page}</div>
+                    <button disabled={page > 500} onClick={getNextPage}>
+                        Next Page
+                    </button>
+                    </div>
+                </>
+
+            )}
+            </div>
+            </div>
         </div>
     );
 };

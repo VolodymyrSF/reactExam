@@ -1,9 +1,8 @@
 import React from 'react';
-
-import {Movies} from "../components/Movies/Movies";
 import {Outlet} from "react-router-dom";
+import {Movies} from "../components/Movies/Movies";
 
-const HomePage = () => {
+const MoviesPage = () => {
     return (
         <div>
             <Outlet/>
@@ -13,4 +12,4 @@ const HomePage = () => {
     );
 };
 
-export {HomePage};
+export {MoviesPage};

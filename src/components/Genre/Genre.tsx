@@ -11,8 +11,8 @@ const Genre:FC<IProps> = ({genre}) => {
     const navigate=useNavigate();
     const {name,id}=genre
     return (
-        <div className={css.genresDiv} >
-            <div onClick={()=>navigate(`${id}`) } className={css.genreDiv}>{name}</div>
+        <div className={css.genresDiv} onClick={()=>navigate(`${id}`) }>
+            <div  className={css.genreDiv}>{name}</div>
         </div>
     );
 };

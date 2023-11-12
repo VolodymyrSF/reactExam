@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 import {movieService} from "../services/movieService";
 import {IMovieDetails} from "../interfaces/movieDetailsInterface";
-import {MovieDetails} from "../components/Movie/MovieDetails";
+import {MovieDetails} from "../components/Movie/MovieDetailsContainer/MovieDetails";
 
 
 const MovieDetailsPage= () => {

@@ -1,5 +1,6 @@
 .header{
     display: flex;
+    flex-direction: row;
     background-color: #294D61 ;
     font-size: 25px;
     justify-content: space-around;
@@ -16,4 +17,14 @@
 }
 .header a:active{
     color: whitesmoke;
+}
+.switchDiv{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.userDiv{
+    height: 8vh;
+    width: 4vw;
+    background-color: whitesmoke;
+    border-radius: 60%;
 }

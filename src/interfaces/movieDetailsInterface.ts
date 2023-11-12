@@ -2,6 +2,17 @@ export interface IGenresMap{
     id: number,
     name: string
 }
+export interface ICompanies {
+    id: number,
+    logo_path: string,
+    name: string,
+    origin_country: string
+}
+export interface ILanguages{
+    english_name: string,
+    iso_639_1: string,
+    name: string
+}
 
 export interface IMovieDetails{
     adult: boolean,
@@ -17,20 +28,7 @@ export interface IMovieDetails{
     overview: string
         popularity: number,
     poster_path: string,
-    production_companies: [
-        {
-            id: number,
-            logo_path: string,
-            name: string,
-            origin_country: string
-        },
-        {
-            id: number,
-            logo_path: null,
-            name: string,
-            origin_country: string
-        }
-    ],
+    production_companies: ICompanies[],
     production_countries: [
         {
             iso_3166_1: string,
@@ -40,13 +38,7 @@ export interface IMovieDetails{
     release_date: string,
     revenue: number,
     runtime: number,
-    spoken_languages: [
-        {
-            english_name: string,
-            iso_639_1: string,
-            name: string
-        }
-    ],
+    spoken_languages: ILanguages[],
     status: string,
     tagline: string,
     title: string,
