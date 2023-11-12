@@ -17,7 +17,6 @@ export const useTheme = () => {
 interface ThemeProviderProps {
     children: ReactNode;
 }
-
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState<string>('light');
 
