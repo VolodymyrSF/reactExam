@@ -25,10 +25,8 @@ const GenreListedPage = () => {
     };
 
     return (
-        <div>
         <div className={css.mainDiv}>
             {genredMovies.results.map(genredMovies=><GenredMovies key={genredMovies.id} genredMovies={genredMovies}/>)}
-        </div>
             <div className={css.buttonDiv}>
                 <button disabled={page===1} onClick={getPreviousPage}>Previous Page</button>
                 <div className={css.pageDiv}>Current Page:{page}</div>
